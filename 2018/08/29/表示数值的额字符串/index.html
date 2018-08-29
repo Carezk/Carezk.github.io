@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | zkBlog</title>
+  <title>表示数值的字符串 | zkBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zkBlog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="题目描述  请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。解题思路 思路一：  利用正则表达式，对字符串中的每个字符进行判断分析 思路二： 利用自身的格式校验 思路三： 1.对字符串中的每个字符进行判">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表示数值的字符串">
+<meta property="og:url" content="http://yoursite.com/2018/08/29/表示数值的额字符串/index.html">
 <meta property="og:site_name" content="zkBlog">
+<meta property="og:description" content="题目描述  请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。解题思路 思路一：  利用正则表达式，对字符串中的每个字符进行判断分析 思路二： 利用自身的格式校验 思路三： 1.对字符串中的每个字符进行判">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-08-29T01:16:26.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zkBlog">
+<meta name="twitter:title" content="表示数值的字符串">
+<meta name="twitter:description" content="题目描述  请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。解题思路 思路一：  利用正则表达式，对字符串中的每个字符进行判断分析 思路二： 利用自身的格式校验 思路三： 1.对字符串中的每个字符进行判">
   
     <link rel="alternative" href="/atom.xml" title="zkBlog" type="application/atom+xml">
   
@@ -142,130 +146,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-表示数值的额字符串" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      表示数值的字符串
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/表示数值的额字符串/" class="archive-article-date">
+
+        
+        <a href="/2018/08/29/表示数值的额字符串/" class="archive-article-date">
   	<time datetime="2018-08-29T01:02:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/表示数值的额字符串/">表示数值的字符串</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题目描述</p>
+<ul>
+<li>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。<br>解题思路</li>
+<li>思路一：</li>
+</ul>
+<p>利用正则表达式，对字符串中的每个字符进行判断分析</p>
+<p>思路二：</p>
+<p>利用自身的格式校验</p>
+<p>思路三：</p>
+<p>1.对字符串中的每个字符进行判断分析<br>2.e（E）后面只能接数字，并且不能出现2次<br>3.对于+、-号，只能出现在第一个字符或者是e的后一位<br>4.对于小数点，不能出现2次，e后面不能出现小数点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">private int index;</span><br><span class="line"></span><br><span class="line">public boolean isNumeric(char[] str) &#123;</span><br><span class="line">	if (str == null || str.length == 0) &#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	// 标记符号，小数点，e是否出现过</span><br><span class="line">	boolean sign = false, decimal = false, hasE = false;</span><br><span class="line">	for (int i = 0; i &lt; str.length; i++) &#123;</span><br><span class="line">		if (str[i] == &apos;e&apos; || str[i] == &apos;E&apos;) &#123;</span><br><span class="line">			if (i == str.length) &#123;// e后面接数字</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			if (hasE) &#123;// 不能同时存在两个</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			return true;</span><br><span class="line">		&#125; else if (str[i] == &apos;+&apos; || str[i] == &apos;-&apos;) &#123;</span><br><span class="line">			//第二次出现+-符号，则必须紧接在e之后</span><br><span class="line">			if (sign &amp;&amp; str[i - 1] != &apos;e&apos; &amp;&amp; str[i - 1] != &apos;E&apos;) &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			//第一次出现+-符号，且不是出现在第一个字符，也必须紧接在e之后</span><br><span class="line">			if (!sign &amp;&amp; i &gt; 0 &amp;&amp; str[i - 1] != &apos;e&apos; &amp;&amp; str[i - 1] != &apos;E&apos;) &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			sign = true;</span><br><span class="line">		&#125; else if (str[i] == &apos;.&apos;) &#123;</span><br><span class="line">			// e后面不能接小数，小数点后不能出现两次</span><br><span class="line">			if (hasE || decimal) &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			decimal = true;</span><br><span class="line">		&#125; else if (str[i] &lt; &apos;0&apos; || str[i] &gt; &apos;9&apos;) &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">    /**</span><br><span class="line"> * 自身校验</span><br><span class="line"> */</span><br><span class="line">public boolean isNumeric_2(char[] str) &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           double number = Double.parseDouble(new String(str));</span><br><span class="line">       &#125; catch (NumberFormatException e) &#123;</span><br><span class="line">           return false;</span><br><span class="line">       &#125;</span><br><span class="line">       return true;</span><br><span class="line">   &#125;</span><br><span class="line">/**</span><br><span class="line">    * 利用正则表达式</span><br><span class="line">    * [\\+\\-]?                    正或负符号出现与否</span><br><span class="line">    * \\d*                         整数部分是否出现，如-.34 或 +3.34均符合</span><br><span class="line">    * (\\.\\d+)?                   如果出现小数点，那么小数点后面必须有数字；否则一起不出现</span><br><span class="line">    * ([eE][\\+\\-]?\\d+)?         如果存在指数部分，那么e或E肯定出现，+或-可以不出现，紧接着必须跟着整数；或者整个部分都不出现</span><br><span class="line">    *</span><br><span class="line">    * @param str</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   public boolean isNumeric_3(char[] str) &#123;</span><br><span class="line">       return new String(str).matches(&quot;[\\+\\-]?\\d*(\\.\\d+)?([eE][\\+\\-]?\\d+)?&quot;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/29/表示数值的额字符串/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/27/TCP三次握手/" class="archive-article-date">
-  	<time datetime="2018-08-27T10:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/27/TCP三次握手/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">测试博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/27/TCP三次握手/">测试博客</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/TCPIP协议/" class="archive-article-date">
-  	<time datetime="2018-08-22T11:22:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/TCPIP协议/">网络基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/02/测试博客/" class="archive-article-date">
-  	<time datetime="2018-07-02T11:22:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/02/测试博客/">测试博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -288,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
